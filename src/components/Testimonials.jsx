@@ -68,13 +68,14 @@ const Testimonials = ({ darkMode }) => {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
+          centerMode: true,
         },
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          centerMode: false,
+          centerMode: true,
         },
       },
     ],
@@ -83,28 +84,24 @@ const Testimonials = ({ darkMode }) => {
   return (
     <div
       id="testimonials"
-      className="w-full h-full flex flex-col justify-center items-center font-sans py-10 px-4"
+      className="w-full min-h-[34rem] flex flex-col justify-center items-center py-10 px-4"
     >
       <h1 className="text-2xl font-bold tracking-wide p-3 text-center">
         Testimonials
       </h1>
       <span className="max-w-md font-light text-center">
-        Hear What Our Regular Customers Says!
+        Hear What Our Regular Customers Say!
       </span>
-      <div
-        className={`w-full h-auto my-10 p-5 ${
-          darkMode ? "bg-gray-700" : "bg-gray-100"
-        } shadow-md`}
-      >
+      <div className="w-full h-auto mt-10">
         <Slider {...settings}>
           {items.map((item, index) => (
-            <div key={index} className="px-2">
+            <div key={index} className="px-2 flex justify-center m-3">
               <div
-                className={`flex flex-col w-full max-w-[280px] sm:max-w-xs h-auto sm:h-[250px] px-3 py-4 sm:px-4 sm:py-6 gap-3 rounded-2xl shadow-md transition-all duration-300 ease-in-out hover:scale-105 
+                className={`flex flex-col w-full max-w-[280px] sm:max-w-xs px-3 py-4 sm:px-4 sm:py-6 gap-3 rounded-2xl shadow-md transition-all duration-300 ease-in-out hover:scale-105 
                   ${
                     darkMode
-                      ? "bg-stone-900 shadow-stone-700"
-                      : "bg-gray-200 shadow-gray-600"
+                      ? "bg-stone-900 shadow-stone-700 text-white"
+                      : "bg-gray-200 shadow-gray-600 text-black"
                   }
                 `}
               >

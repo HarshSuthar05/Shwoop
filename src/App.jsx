@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "./NavBar";
 import LinkNavBar from "./LinkNavBar";
 import DashBoard from "./DashBoard";
@@ -18,10 +17,10 @@ const App = () => {
     <div
       className={`${
         darkMode ? "bg-black text-white" : "bg-white text-black"
-      } w-full min-h-screen`}
+      } w-full min-h-screen transition-colors duration-500 fonrt-poppins`}
     >
       <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <LinkNavBar />
+      <LinkNavBar darkMode={darkMode} />
       <DashBoard darkMode={darkMode} />
       <Footer darkMode={darkMode} />
     </div>

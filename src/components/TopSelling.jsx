@@ -49,7 +49,8 @@ const TopSelling = ({ darkMode }) => {
       star: "4.8",
     },
   ];
-  var settings = {
+
+  const settings = {
     dots: false,
     arrows: false,
     infinite: true,
@@ -82,6 +83,7 @@ const TopSelling = ({ darkMode }) => {
       },
     ],
   };
+
   return (
     <motion.div
       className="overflow-x-hidden w-full"
@@ -92,7 +94,7 @@ const TopSelling = ({ darkMode }) => {
     >
       <div
         id="top-selling"
-        className="w-full h-full flex items-center justify-center flex-col p-3 font-sans overflow-x-hidden"
+        className="w-full h-full flex items-center justify-center flex-col py-10 px-4 "
       >
         <h1 className="text-2xl font-bold tracking-wide mt-2">
           Top Selling Products
@@ -101,33 +103,30 @@ const TopSelling = ({ darkMode }) => {
           Choosen by many due to a reason ,<br />
           Grab the opportunity to hold the Precious Collection!
         </p>
-        <div className="w-full overflow-hidden">
-          <div className="w-full h-full mt-4 px-12">
-            <Slider {...settings}>
-              {items.map((item, index) => (
-                <div key={index} className="p-2">
-                  <div
-                    className={`flex flex-col rounded-xl w-[200px] p-2 h-64 shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer ${
+        <div className="w-full overflow-hidden mt-4">
+          <Slider {...settings}>
+            {items.map((item, index) => (
+              <div key={index} className="flex justify-center p-2">
+                <div
+                  className={`flex flex-col rounded-xl w-[200px] p-2 h-64 hover:scale-105 transition-transform duration-300 cursor-pointer
+                    ${
                       darkMode
-                        ? "bg-gray-600 shadow-gray-500"
-                        : "bg-gray-200 shadow-gray-300"
+                        ? "bg-gray-700 text-white"
+                        : "bg-gray-100 text-black"
                     }`}
-                  >
-                    <img
-                      src={item.img}
-                      alt="Image"
-                      className="h-40 w-full object-cover object-top rounded-md"
-                    />
-                    <h4 className="tracking-wide pt-2">{item.description}</h4>
-                    <span className="font-extralight text-sm">
-                      {item.color}
-                    </span>
-                    <span className="text-[13px] pt-2">{item.star} ★</span>
-                  </div>
+                >
+                  <img
+                    src={item.img}
+                    alt="Image"
+                    className="h-40 w-full object-cover object-top rounded-md"
+                  />
+                  <h4 className="tracking-wide pt-2">{item.description}</h4>
+                  <span className="font-extralight text-sm">{item.color}</span>
+                  <span className="text-[13px] pt-2">{item.star} ★</span>
                 </div>
-              ))}
-            </Slider>
-          </div>
+              </div>
+            ))}
+          </Slider>
         </div>
       </div>
     </motion.div>
