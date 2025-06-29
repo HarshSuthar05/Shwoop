@@ -27,7 +27,7 @@ const Testimonials = ({ darkMode }) => {
     {
       img: Rohit,
       description:
-        "“Garden me ghoomne waalon ladko ke liye kapde lene aaya tha , khud ke le baitha”",
+        "“Garden me ghoomne waalon ladko ke liye kapde lene aaya tha, khud ke lex baitha”",
       name: "Rohit Sharma",
     },
     {
